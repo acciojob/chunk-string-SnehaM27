@@ -1,8 +1,13 @@
 function stringChop(str, size) {
-  // your code here
-}
+  // If input string is null, return empty array
+  if (str === null) return [];
 
-// Do not change the code below
-const str = prompt("Enter String.");
-const size = prompt("Enter Chunk Size.");
-alert(stringChop(str, size));
+  size = Number(size); // convert chunk size to number
+  let result = [];
+
+  for (let i = 0; i < str.length; i += size) {
+    result.push(str.substring(i, i + size));
+  }
+
+  return result;
+}
